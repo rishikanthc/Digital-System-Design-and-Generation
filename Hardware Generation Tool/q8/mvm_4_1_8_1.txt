@@ -1,0 +1,544 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.7;
+1.7
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "mvm_4_1_8_1";
+mvm_4_1_8_1
+set SRC_FILE "r_chandrasekaran_mvm_4_1_8_1.sv";
+r_chandrasekaran_mvm_4_1_8_1.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./r_chandrasekaran_mvm_4_1_8_1.sv
+Compiling source file ./r_chandrasekaran_mvm_4_1_8_1.sv
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:1: Parameter keyword used in local parameter declaration. (VER-329)
+Information:  ./r_chandrasekaran_mvm_4_1_8_1.sv:295: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:303: the undeclared symbol 'done' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:309: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:310: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:313: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:316: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:316: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:377: The statements in initial blocks are ignored. (VER-281)
+Information:  ./r_chandrasekaran_mvm_4_1_8_1.sv:379: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:387: the undeclared symbol 'done' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:393: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:394: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:397: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:400: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:400: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:459: The statements in initial blocks are ignored. (VER-281)
+Information:  ./r_chandrasekaran_mvm_4_1_8_1.sv:461: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:469: the undeclared symbol 'done' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:475: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:476: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:479: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:482: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:482: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:558: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mvm_4_1_8_1'.
+Information: Building the design 'control' instantiated from design 'mvm_4_1_8_1' with
+	the parameters "4,2". (HDL-193)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:84: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:110: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 42 in file
+	'./r_chandrasekaran_mvm_4_1_8_1.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            43            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 96 in file
+	'./r_chandrasekaran_mvm_4_1_8_1.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            97            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine control_K4_logK2 line 53 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   multiplier_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter2_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine control_K4_logK2 line 96 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     addr_x_reg      | Latch |   2   |  Y  | N  | N  | N  | -  | -  | -  |
+|     addr_a_reg      | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Warning:  ./r_chandrasekaran_mvm_4_1_8_1.sv:96: Netlist for always_comb block contains a latch. (ELAB-974)
+Presto compilation completed successfully.
+Information: Building the design 'datapath' instantiated from design 'mvm_4_1_8_1' with
+	the parameters "4,2,8". (HDL-193)
+
+Inferred memory devices in process
+	in routine datapath_K4_logK2_b8 line 264 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pipeline_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine datapath_K4_logK2_b8 line 268 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mac_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_K4_logK2_b8' with
+	the parameters "8,4,2". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH8_SIZE4_LOGSIZE2 line 288 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH8_SIZE4_LOGSIZE2/289 |   4    |    8    |      2       | N  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_K4_logK2_b8' with
+	the parameters "8,16,4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH8_SIZE16_LOGSIZE4 line 288 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+============================================================================
+|         block name/line           | Inputs | Outputs | # sel inputs | MB |
+============================================================================
+| memory_WIDTH8_SIZE16_LOGSIZE4/289 |   16   |    8    |      4       | N  |
+============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_K4_logK2_b8' with
+	the parameters "16,4,2". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE4_LOGSIZE2 line 288 in file
+		'./r_chandrasekaran_mvm_4_1_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+============================================================================
+|         block name/line           | Inputs | Outputs | # sel inputs | MB |
+============================================================================
+| memory_WIDTH16_SIZE4_LOGSIZE2/289 |   4    |   16    |      2       | N  |
+============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset loadMatrix loadVector start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{loadMatrix loadVector start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+#set_input_delay 1 -max -clock clk $INPUTS
+#set_output_delay 1 -max -clock clk [all_outputs]
+# rule of thumb: 20% of clock period
+###### OPTIMIZATION #######
+set_max_area 0
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     J-2014.09-SP5-2
+Date:        Sat Dec  5 08:33:50 2015
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               4
+    Cells do not drive (LINT-1)                                     4
+--------------------------------------------------------------------------------
+
+Warning: In design 'control_K4_logK2', cell 'C359' does not drive any nets. (LINT-1)
+Warning: In design 'control_K4_logK2', cell 'C402' does not drive any nets. (LINT-1)
+Warning: In design 'control_K4_logK2', cell 'C407' does not drive any nets. (LINT-1)
+Warning: In design 'control_K4_logK2', cell 'C431' does not drive any nets. (LINT-1)
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2
+                                                               |     *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2
+                                                               |     *     |
+============================================================================
+
+
+Information: There are 4 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'memory_WIDTH16_SIZE4_LOGSIZE2'
+  Processing 'memory_WIDTH8_SIZE16_LOGSIZE4'
+  Processing 'memory_WIDTH8_SIZE4_LOGSIZE2'
+  Processing 'datapath_K4_logK2_b8'
+  Processing 'control_K4_logK2'
+  Processing 'mvm_4_1_8_1'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'datapath_K4_logK2_b8_DW01_add_0'
+  Processing 'control_K4_logK2_DW01_inc_0'
+  Mapping 'datapath_K4_logK2_b8_DW_mult_tc_0'
+  Processing 'DW01_inc_width3'
+  Mapping 'DW_mult_uns'
+Information: Added key list 'DesignWare' to design 'dp_cluster_0_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'control_K4_logK2'. (DDB-72)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    3106.9      0.00       0.0      20.4                          
+    0:00:01    3106.9      0.00       0.0      20.4                          
+    0:00:01    3106.9      0.00       0.0      20.4                          
+    0:00:01    3106.9      0.00       0.0      20.4                          
+    0:00:01    3106.9      0.00       0.0      20.4                          
+    0:00:02    2682.3      0.00       0.0       3.7                          
+    0:00:02    2682.3      0.00       0.0       3.7                          
+    0:00:02    2682.3      0.00       0.0       3.7                          
+    0:00:02    2682.3      0.00       0.0       3.7                          
+    0:00:02    2682.3      0.00       0.0       3.7                          
+    0:00:02    2682.9      0.00       0.0       0.0                          
+    0:00:02    2682.9      0.00       0.0       0.0                          
+    0:00:02    2682.9      0.00       0.0       0.0                          
+    0:00:02    2682.9      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02    2682.9      0.00       0.0       0.0                          
+    0:00:02    2682.9      0.00       0.0       0.0                          
+    0:00:02    2682.6      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02    2682.6      0.00       0.0       0.0                          
+    0:00:02    2682.6      0.00       0.0       0.0                          
+    0:00:02    2681.0      0.00       0.0       0.0                          
+    0:00:02    2679.9      0.00       0.0       0.0                          
+    0:00:02    2679.9      0.00       0.0       0.0                          
+    0:00:02    2679.9      0.00       0.0       0.0                          
+    0:00:02    2679.9      0.00       0.0       0.0                          
+    0:00:02    2679.9      0.00       0.0       0.0                          
+    0:00:02    2678.6      0.00       0.0       0.0                          
+    0:00:02    2678.6      0.00       0.0       0.0                          
+    0:00:02    2678.6      0.00       0.0       0.0                          
+    0:00:02    2678.6      0.00       0.0       0.0                          
+    0:00:02    2678.6      0.00       0.0       0.0                          
+    0:00:02    2678.6      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+    0:00:02    2667.4      0.00       0.0       0.0                          
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+report_area
+ 
+****************************************
+Report : area
+Design : mvm_4_1_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 08:33:52 2015
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           30
+Number of nets:                            42
+Number of cells:                            2
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       2
+
+Combinational area:               1284.247998
+Buf/Inv area:                       47.880000
+Noncombinational area:            1383.199951
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  2667.447949
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : mvm_4_1_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 08:33:53 2015
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mvm_4_1_8_1            5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   1.0405 mW   (94%)
+  Net Switching Power  =  68.4347 uW    (6%)
+                         ---------
+Total Dynamic Power    =   1.1090 mW  (100%)
+
+Cell Leakage Power     =  54.1333 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register         994.2068           10.1431        2.3455e+04        1.0278e+03  (  88.37%)
+sequential         0.4074            2.9431          234.2510            3.5847  (   0.31%)
+combinational     45.9249           55.3486        3.0444e+04          131.7178  (  11.32%)
+--------------------------------------------------------------------------------------------------
+Total          1.0405e+03 uW        68.4347 uW     5.4133e+04 nW     1.1631e+03 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mvm_4_1_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 08:33:53 2015
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: dtpth/x/data_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dtpth/pipeline_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mvm_4_1_8_1        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  dtpth/x/data_out_reg[1]/CK (DFF_X1)                     0.00       0.00 r
+  dtpth/x/data_out_reg[1]/Q (DFF_X1)                      0.14       0.14 r
+  dtpth/x/data_out[1] (memory_WIDTH8_SIZE4_LOGSIZE2)      0.00       0.14 r
+  dtpth/mult_260/a[1] (datapath_K4_logK2_b8_DW_mult_tc_0)
+                                                          0.00       0.14 r
+  dtpth/mult_260/U171/ZN (INV_X1)                         0.05       0.19 f
+  dtpth/mult_260/U172/Z (XOR2_X2)                         0.12       0.31 r
+  dtpth/mult_260/U233/ZN (NAND2_X1)                       0.09       0.39 f
+  dtpth/mult_260/U181/ZN (OAI22_X1)                       0.08       0.47 r
+  dtpth/mult_260/U37/S (HA_X1)                            0.05       0.52 f
+  dtpth/mult_260/U13/CO (FA_X1)                           0.10       0.62 f
+  dtpth/mult_260/U12/CO (FA_X1)                           0.09       0.71 f
+  dtpth/mult_260/U11/CO (FA_X1)                           0.09       0.80 f
+  dtpth/mult_260/U10/CO (FA_X1)                           0.09       0.89 f
+  dtpth/mult_260/U9/CO (FA_X1)                            0.09       0.98 f
+  dtpth/mult_260/U8/CO (FA_X1)                            0.09       1.07 f
+  dtpth/mult_260/U7/CO (FA_X1)                            0.09       1.16 f
+  dtpth/mult_260/U6/CO (FA_X1)                            0.09       1.25 f
+  dtpth/mult_260/U5/CO (FA_X1)                            0.09       1.35 f
+  dtpth/mult_260/U4/CO (FA_X1)                            0.09       1.44 f
+  dtpth/mult_260/U3/CO (FA_X1)                            0.09       1.53 f
+  dtpth/mult_260/U2/S (FA_X1)                             0.13       1.66 r
+  dtpth/mult_260/product[14] (datapath_K4_logK2_b8_DW_mult_tc_0)
+                                                          0.00       1.66 r
+  dtpth/pipeline_reg[14]/D (DFF_X1)                       0.01       1.66 r
+  data arrival time                                                  1.66
+
+  clock clk (rise edge)                                   1.70       1.70
+  clock network delay (ideal)                             0.00       1.70
+  dtpth/pipeline_reg[14]/CK (DFF_X1)                      0.00       1.70 r
+  library setup time                                     -0.03       1.67
+  data required time                                                 1.67
+  --------------------------------------------------------------------------
+  data required time                                                 1.67
+  data arrival time                                                 -1.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/rishchan/ese507work/project3/Milestone/submission/report/q8/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...

@@ -1,0 +1,164 @@
+# vsim tbench1 -c -do "run -all" 
+# Start time: 02:25:35 on Dec 05,2015
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "control(fast)".
+# //  ModelSim SE 10.4c Jul 19 2015 Linux 3.10.0-229.20.1.el7.x86_64
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading sv_std.std
+# Loading work.r_chandrasekaran_mvm_32_1_8_0_sv_unit(fast)
+# Loading work.tbench1(fast)
+# Loading work.mvm_32_1_8_0(fast)
+# Loading work.control(fast)
+# Loading work.datapath(fast)
+# Loading work.memory(fast)
+# Loading work.memory(fast__1)
+# Loading work.memory(fast__2)
+# run -all
+# for random set:          1
+# y[          0] =  32329. Expected value is  32329
+# y[          1] =  17869. Expected value is  17869
+# y[          2] = -18533. Expected value is -18533
+# y[          3] = -27764. Expected value is -27764
+# y[          4] =  32527. Expected value is  32527
+# y[          5] =  21784. Expected value is  21784
+# y[          6] = -27192. Expected value is -27192
+# y[          7] = -17128. Expected value is -17128
+# y[          8] = -12842. Expected value is -12842
+# y[          9] = -17440. Expected value is -17440
+# y[         10] =   -793. Expected value is   -793
+# y[         11] = -26925. Expected value is -26925
+# y[         12] =  20146. Expected value is  20146
+# y[         13] =  25344. Expected value is  25344
+# y[         14] = -13838. Expected value is -13838
+# y[         15] =   4089. Expected value is   4089
+# y[         16] = -16002. Expected value is -16002
+# y[         17] =  -9632. Expected value is  -9632
+# y[         18] = -28541. Expected value is -28541
+# y[         19] =  13746. Expected value is  13746
+# y[         20] = -29106. Expected value is -29106
+# y[         21] =  30831. Expected value is  30831
+# y[         22] = -28152. Expected value is -28152
+# y[         23] =  26676. Expected value is  26676
+# y[         24] =    260. Expected value is    260
+# y[         25] =  11234. Expected value is  11234
+# y[         26] = -19944. Expected value is -19944
+# y[         27] =   8899. Expected value is   8899
+# y[         28] =  28631. Expected value is  28631
+# y[         29] =  20645. Expected value is  20645
+# y[         30] = -29301. Expected value is -29301
+# y[         31] =  25358. Expected value is  25358
+# for random set:          2
+# y[          0] =  -5191. Expected value is  -5191
+# y[          1] =  -4525. Expected value is  -4525
+# y[          2] =   -238. Expected value is   -238
+# y[          3] = -26862. Expected value is -26862
+# y[          4] =  19099. Expected value is  19099
+# y[          5] = -16081. Expected value is -16081
+# y[          6] = -32583. Expected value is -32583
+# y[          7] =  13854. Expected value is  13854
+# y[          8] = -15272. Expected value is -15272
+# y[          9] =  14907. Expected value is  14907
+# y[         10] = -16349. Expected value is -16349
+# y[         11] =  11353. Expected value is  11353
+# y[         12] =  -1611. Expected value is  -1611
+# y[         13] =  24070. Expected value is  24070
+# y[         14] =   5623. Expected value is   5623
+# y[         15] = -12321. Expected value is -12321
+# y[         16] =   4448. Expected value is   4448
+# y[         17] =  17233. Expected value is  17233
+# y[         18] =  -4670. Expected value is  -4670
+# y[         19] =   -619. Expected value is   -619
+# y[         20] =  21532. Expected value is  21532
+# y[         21] =  30010. Expected value is  30010
+# y[         22] =  -4934. Expected value is  -4934
+# y[         23] = -21803. Expected value is -21803
+# y[         24] =  -7167. Expected value is  -7167
+# y[         25] =   -693. Expected value is   -693
+# y[         26] =  10999. Expected value is  10999
+# y[         27] =  16182. Expected value is  16182
+# y[         28] =  23005. Expected value is  23005
+# y[         29] =   7491. Expected value is   7491
+# y[         30] = -32187. Expected value is -32187
+# y[         31] = -15861. Expected value is -15861
+# for random set:          3
+# y[          0] =  18590. Expected value is  18590
+# y[          1] = -24467. Expected value is -24467
+# y[          2] =  22983. Expected value is  22983
+# y[          3] = -27930. Expected value is -27930
+# y[          4] = -26009. Expected value is -26009
+# y[          5] = -32664. Expected value is -32664
+# y[          6] = -31975. Expected value is -31975
+# y[          7] = -24697. Expected value is -24697
+# y[          8] =  28555. Expected value is  28555
+# y[          9] =  -6481. Expected value is  -6481
+# y[         10] =  26550. Expected value is  26550
+# y[         11] = -19283. Expected value is -19283
+# y[         12] = -30924. Expected value is -30924
+# y[         13] =  29029. Expected value is  29029
+# y[         14] =  23580. Expected value is  23580
+# y[         15] =  17583. Expected value is  17583
+# y[         16] =  14260. Expected value is  14260
+# y[         17] =  19902. Expected value is  19902
+# y[         18] =  24656. Expected value is  24656
+# y[         19] =  24349. Expected value is  24349
+# y[         20] = -15438. Expected value is -15438
+# y[         21] =  27945. Expected value is  27945
+# y[         22] =  19306. Expected value is  19306
+# y[         23] =   4602. Expected value is   4602
+# y[         24] =  -7387. Expected value is  -7387
+# y[         25] =  11533. Expected value is  11533
+# y[         26] =  -6044. Expected value is  -6044
+# y[         27] = -23863. Expected value is -23863
+# y[         28] =  -8561. Expected value is  -8561
+# y[         29] =  15330. Expected value is  15330
+# y[         30] =  25211. Expected value is  25211
+# y[         31] =  24781. Expected value is  24781
+# for random set:          4
+# y[          0] =  19209. Expected value is  19209
+# y[          1] =  24771. Expected value is  24771
+# y[          2] =  -3937. Expected value is  -3937
+# y[          3] =   4865. Expected value is   4865
+# y[          4] = -26582. Expected value is -26582
+# y[          5] =  19550. Expected value is  19550
+# y[          6] =    511. Expected value is    511
+# y[          7] =  19241. Expected value is  19241
+# y[          8] = -22551. Expected value is -22551
+# y[          9] =  30734. Expected value is  30734
+# y[         10] =  20608. Expected value is  20608
+# y[         11] =    311. Expected value is    311
+# y[         12] = -31704. Expected value is -31704
+# y[         13] =   8622. Expected value is   8622
+# y[         14] =   -225. Expected value is   -225
+# y[         15] = -29564. Expected value is -29564
+# y[         16] = -19847. Expected value is -19847
+# y[         17] =  -3739. Expected value is  -3739
+# y[         18] = -30330. Expected value is -30330
+# y[         19] =   7321. Expected value is   7321
+# y[         20] =   8793. Expected value is   8793
+# y[         21] = -25294. Expected value is -25294
+# y[         22] =  30654. Expected value is  30654
+# y[         23] =  10782. Expected value is  10782
+# y[         24] =   6058. Expected value is   6058
+# y[         25] =  29771. Expected value is  29771
+# y[         26] =  24214. Expected value is  24214
+# y[         27] = -29465. Expected value is -29465
+# y[         28] =  22859. Expected value is  22859
+# y[         29] = -13662. Expected value is -13662
+# y[         30] = -23827. Expected value is -23827
+# y[         31] =  17260. Expected value is  17260
+# ** Note: $finish    : r_chandrasekaran_mvm_32_1_8_0.sv(367)
+#    Time: 371476 ns  Iteration: 0  Instance: /tbench1
+# End time: 02:25:38 on Dec 05,2015, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

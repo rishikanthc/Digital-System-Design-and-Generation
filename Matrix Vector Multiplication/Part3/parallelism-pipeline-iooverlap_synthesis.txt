@@ -1,0 +1,695 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 0.84;
+0.84
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "mvm3_part3";
+mvm3_part3
+#set SRC_FILE "part3-pipeline-dw3.sv";
+#set SRC_FILE "part3-laundry.sv";
+#set SRC_FILE "expt.sv";
+set SRC_FILE "newtry.sv";
+newtry.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./newtry.sv
+Compiling source file ./newtry.sv
+Warning:  ./newtry.sv:10: the undeclared symbol 'clear_acc' assumed to have the default net type, which is 'wire'. (VER-936)
+Information:  ./newtry.sv:264: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./newtry.sv:276: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./newtry.sv:276: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./newtry.sv:305: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./newtry.sv:351: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mvm3_part3'.
+Information: Building the design 'datapath'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'control'. (HDL-193)
+Warning:  ./newtry.sv:131: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./newtry.sv:144: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine control line 25 in file
+		'./newtry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine control line 42 in file
+		'./newtry.sv'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+| secondary_state_reg | Latch |   3   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine control line 79 in file
+		'./newtry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      entry_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_y_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     wr_en_y_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x0_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_a0_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mac_done_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x1_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x2_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x3_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter0_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter1_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter2_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter3_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_a1_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_a2_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_a3_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Warning:  ./newtry.sv:42: Netlist for always_comb block contains a latch. (ELAB-974)
+Presto compilation completed successfully.
+Information: Building the design 'memory4_out' instantiated from design 'datapath' with
+	the parameters "8,4,6". (HDL-193)
+Warning:  ./newtry.sv:254: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:255: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:256: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:257: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:259: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine memory4_out_WIDTH8_SIZE4_LOGSIZE6 line 253 in file
+		'./newtry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out0_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out1_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out2_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out3_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+================================================================================
+|           block name/line             | Inputs | Outputs | # sel inputs | MB |
+================================================================================
+| memory4_out_WIDTH8_SIZE4_LOGSIZE6/254 |   4    |    8    |      2       | N  |
+| memory4_out_WIDTH8_SIZE4_LOGSIZE6/255 |   4    |    8    |      2       | N  |
+| memory4_out_WIDTH8_SIZE4_LOGSIZE6/256 |   4    |    8    |      2       | N  |
+| memory4_out_WIDTH8_SIZE4_LOGSIZE6/257 |   4    |    8    |      2       | N  |
+================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory4_out' instantiated from design 'datapath' with
+	the parameters "8,16,6". (HDL-193)
+Warning:  ./newtry.sv:254: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:255: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:256: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:257: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:259: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine memory4_out_WIDTH8_SIZE16_LOGSIZE6 line 253 in file
+		'./newtry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out0_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out1_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out2_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_out3_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+=================================================================================
+|            block name/line             | Inputs | Outputs | # sel inputs | MB |
+=================================================================================
+| memory4_out_WIDTH8_SIZE16_LOGSIZE6/254 |   16   |    8    |      4       | N  |
+| memory4_out_WIDTH8_SIZE16_LOGSIZE6/255 |   16   |    8    |      4       | N  |
+| memory4_out_WIDTH8_SIZE16_LOGSIZE6/256 |   16   |    8    |      4       | N  |
+| memory4_out_WIDTH8_SIZE16_LOGSIZE6/257 |   16   |    8    |      4       | N  |
+=================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'matrix'. (HDL-193)
+
+Inferred memory devices in process
+	in routine matrix line 203 in file
+		'./newtry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       t1_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       t2_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       t3_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       t4_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "16,4,6". (HDL-193)
+Warning:  ./newtry.sv:240: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./newtry.sv:242: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE4_LOGSIZE6 line 239 in file
+		'./newtry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+============================================================================
+|         block name/line           | Inputs | Outputs | # sel inputs | MB |
+============================================================================
+| memory_WIDTH16_SIZE4_LOGSIZE6/240 |   4    |   16    |      2       | N  |
+============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+#set_input_delay 1 -max -clock clk $INPUTS
+#set_output_delay 1 -max -clock clk [all_outputs]
+# rule of thumb: 20% of clock period
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2
+                                                               |     *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2
+                                                               |     *     |
+============================================================================
+
+
+Information: There are 27 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'control'
+Information: The register 'state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x1_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x1_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x1_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x1_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x1_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x2_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x2_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x2_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x2_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x2_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x2_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x3_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x3_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x3_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x3_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x3_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_x3_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'wr_en_y_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'secondary_state_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'secondary_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'secondary_state_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'memory_WIDTH16_SIZE4_LOGSIZE6'
+  Processing 'matrix'
+  Processing 'memory4_out_WIDTH8_SIZE16_LOGSIZE6'
+  Processing 'memory4_out_WIDTH8_SIZE4_LOGSIZE6'
+  Processing 'datapath'
+  Processing 'mvm3_part3'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'control_DW01_add_0'
+  Processing 'control_DW01_add_1'
+  Processing 'control_DW01_add_2'
+  Processing 'control_DW01_add_3'
+  Mapping 'control_DW_cmp_0'
+  Processing 'control_DW01_inc_0'
+  Processing 'control_DW01_inc_1'
+  Processing 'control_DW01_inc_2'
+  Mapping 'control_DW_cmp_1'
+  Processing 'control_DW01_inc_3'
+  Mapping 'control_DW_cmp_2'
+  Processing 'matrix_DW01_add_0'
+  Processing 'matrix_DW01_add_1'
+  Processing 'matrix_DW01_add_2'
+  Mapping 'matrix_DW_mult_tc_0'
+  Mapping 'matrix_DW_mult_tc_1'
+  Mapping 'matrix_DW_mult_tc_2'
+  Mapping 'matrix_DW_mult_tc_3'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'control'. (DDB-72)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04    6761.5      0.28      23.5      50.6 d/m/*cell*9049/U28/ZN    
+    0:00:04    6761.5      0.28      23.5      50.6 d/m/*cell*9049/U28/ZN    
+    0:00:04    6617.5      0.15      14.9      50.6 d/m/*cell*9049/U42/ZN    
+    0:00:04    6570.7      0.15      14.8      50.6 d/m/*cell*9049/U12/ZN    
+    0:00:04    6548.1      0.15      14.8      50.6 d/m/*cell*9049/*cell*9171/ZN
+    0:00:04    6529.0      0.15      14.8      50.6 d/m/*cell*9049/U13/ZN    
+    0:00:04    6514.1      0.15      15.2      50.6 d/m/*cell*9205/U67/ZN    
+    0:00:04    6451.8      0.15      12.1      50.6 d/m/*cell*9205/*cell*9283/ZN
+    0:00:04    6417.0      0.15      12.1      50.6 d/m/*cell*9205/*cell*9286/ZN
+    0:00:04    6398.9      0.15      11.9      50.6 d/m/*cell*9205/*cell*9274/ZN
+    0:00:04    6447.8      0.16      14.7      50.6 d/m/*cell*9371/*cell*9406/ZN
+    0:00:04    6335.3      0.15       9.5      50.6 d/m/*cell*9371/*cell*9469/ZN
+    0:00:04    6302.1      0.15       8.4      50.6 d/m/*cell*9371/*cell*9481/ZN
+    0:00:04    6284.0      0.15       8.4      50.6 d/m/*cell*9371/*cell*9512/ZN
+    0:00:04    6270.9      0.15       8.4      50.6 d/m/*cell*9371/*cell*9521/ZN
+    0:00:04    6270.9      0.15       8.4      50.6                          
+    0:00:05    6270.9      0.15       8.4      50.6                          
+    0:00:05    6270.9      0.15       8.4      50.6                          
+    0:00:05    6270.9      0.15       8.4      50.6                          
+    0:00:05    6270.9      0.15       8.4      50.6                          
+    0:00:05    5544.5      0.20       7.0       2.6                          
+    0:00:05    5543.7      0.15       5.9       2.6                          
+    0:00:05    5546.4      0.14       5.9       2.6                          
+    0:00:05    5549.6      0.14       5.7       2.6                          
+    0:00:05    5551.7      0.13       5.5       2.6                          
+    0:00:05    5553.5      0.13       5.3       2.6                          
+    0:00:05    5555.9      0.12       5.1       2.6                          
+    0:00:05    5558.1      0.11       5.1       2.6                          
+    0:00:06    5562.3      0.11       5.0       2.6                          
+    0:00:06    5564.7      0.11       4.9       2.6                          
+    0:00:06    5569.0      0.10       4.8       2.6                          
+    0:00:06    5571.6      0.10       4.7       2.6                          
+    0:00:06    5574.8      0.10       4.6       2.6                          
+    0:00:06    5574.8      0.10       4.6       2.6                          
+    0:00:06    5574.8      0.10       4.6       2.6                          
+    0:00:06    5576.4      0.10       4.6       0.0                          
+    0:00:06    5576.4      0.10       4.6       0.0                          
+    0:00:06    5576.4      0.10       4.6       0.0                          
+    0:00:06    5576.4      0.10       4.6       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06    5576.4      0.10       4.6       0.0                          
+    0:00:06    5582.8      0.09       4.4       0.0 d/m/t2_reg[11]/D         
+    0:00:06    5585.5      0.09       4.4       0.0 d/m/t2_reg[11]/D         
+    0:00:06    5595.6      0.08       4.2       0.0 d/m/t1_reg[14]/D         
+    0:00:06    5600.4      0.08       4.1       0.0 d/m/t3_reg[12]/D         
+    0:00:06    5608.6      0.08       3.9       0.0 d/m/t4_reg[12]/D         
+    0:00:06    5613.9      0.07       3.8       0.0 d/m/t4_reg[13]/D         
+    0:00:06    5616.3      0.07       3.7       0.0 d/m/t3_reg[13]/D         
+    0:00:06    5619.8      0.07       3.7       0.0 d/m/t2_reg[14]/D         
+    0:00:06    5624.3      0.07       3.7       0.0 d/m/t4_reg[14]/D         
+    0:00:06    5626.2      0.06       3.6       0.0 d/m/t4_reg[13]/D         
+    0:00:06    5628.8      0.06       3.6       0.0 d/m/t2_reg[11]/D         
+    0:00:06    5632.3      0.06       3.5       0.0 d/m/t4_reg[14]/D         
+    0:00:06    5637.3      0.06       2.4       0.0 d/m/t4_reg[12]/D         
+    0:00:06    5637.1      0.06       2.4       0.0 d/m/t2_reg[11]/D         
+    0:00:07    5634.7      0.06       2.3       0.0 d/m/t1_reg[14]/D         
+    0:00:07    5636.3      0.05       2.3       0.0 d/m/t3_reg[13]/D         
+    0:00:07    5642.1      0.05       2.4       0.0 d/m/t3_reg[13]/D         
+    0:00:07    5643.7      0.05       2.3       0.0 d/m/t4_reg[14]/D         
+    0:00:07    5648.5      0.05       2.2       0.0 d/m/t4_reg[11]/D         
+    0:00:07    5649.8      0.05       2.2       0.0 d/m/t2_reg[11]/D         
+    0:00:07    5653.0      0.05       2.2       0.0 d/m/t1_reg[13]/D         
+    0:00:07    5656.5      0.05       2.1       0.0 d/m/t3_reg[12]/D         
+    0:00:07    5664.2      0.05       2.0       0.0 d/m/t2_reg[14]/D         
+    0:00:07    5666.1      0.04       2.0       0.0 d/m/t4_reg[12]/D         
+    0:00:07    5668.2      0.04       2.0       0.0 d/m/t3_reg[12]/D         
+    0:00:07    5670.9      0.04       1.9       0.0 d/m/t3_reg[13]/D         
+    0:00:07    5673.2      0.04       1.9       0.0 d/m/t1_reg[13]/D         
+    0:00:07    5675.1      0.04       1.9       0.0 d/m/t2_reg[11]/D         
+    0:00:07    5677.2      0.04       1.9       0.0 d/m/t1_reg[12]/D         
+    0:00:07    5679.9      0.04       1.8       0.0 d/m/t4_reg[13]/D         
+    0:00:07    5680.2      0.04       1.8       0.0 d/y/mem_reg[0][14]/D     
+    0:00:07    5683.9      0.04       1.8       0.0 d/m/t3_reg[13]/D         
+    0:00:07    5686.0      0.04       1.8       0.0 d/m/t2_reg[10]/D         
+    0:00:08    5687.3      0.03       1.8       0.0 d/m/t2_reg[11]/D         
+    0:00:08    5689.5      0.03       1.7       0.0 d/m/t2_reg[12]/D         
+    0:00:08    5693.7      0.03       1.7       0.0 d/m/t3_reg[11]/D         
+    0:00:08    5696.1      0.03       1.6       0.0 d/m/t2_reg[11]/D         
+    0:00:08    5699.3      0.03       1.5       0.0 d/m/t4_reg[13]/D         
+    0:00:08    5701.7      0.03       1.5       0.0 d/m/t2_reg[11]/D         
+    0:00:08    5703.0      0.03       1.5       0.0 d/m/t1_reg[14]/D         
+    0:00:08    5704.1      0.03       1.5       0.0 d/m/t1_reg[15]/D         
+    0:00:08    5706.0      0.03       1.5       0.0 d/m/t2_reg[11]/D         
+    0:00:08    5708.1      0.03       1.3       0.0 d/m/t3_reg[13]/D         
+    0:00:08    5711.0      0.03       1.3       0.0 d/m/t2_reg[11]/D         
+    0:00:08    5711.8      0.03       1.3       0.0 d/m/t3_reg[12]/D         
+    0:00:08    5714.5      0.03       1.3       0.0 d/m/t3_reg[13]/D         
+    0:00:08    5716.9      0.02       1.0       0.0 d/m/t2_reg[11]/D         
+    0:00:08    5719.5      0.02       0.9       0.0 d/m/t1_reg[13]/D         
+    0:00:08    5722.2      0.02       0.9       0.0 d/y/mem_reg[0][14]/D     
+    0:00:08    5727.5      0.02       0.9       0.0 d/m/t1_reg[13]/D         
+    0:00:08    5729.6      0.02       0.9       0.0 d/m/t1_reg[12]/D         
+    0:00:09    5729.6      0.02       0.8       0.0 d/m/t1_reg[12]/D         
+    0:00:09    5728.8      0.02       0.8       0.0 d/m/t4_reg[11]/D         
+    0:00:09    5731.5      0.02       0.8       0.0 d/m/t3_reg[11]/D         
+    0:00:09    5735.2      0.02       0.7       0.0 d/m/t2_reg[11]/D         
+    0:00:09    5736.8      0.02       0.7       0.0 d/m/t3_reg[10]/D         
+    0:00:09    5737.6      0.02       0.7       0.0 d/m/t2_reg[11]/D         
+    0:00:09    5738.4      0.02       0.7       0.0 d/m/t1_reg[12]/D         
+    0:00:09    5738.7      0.02       0.7       0.0 d/m/t4_reg[13]/D         
+    0:00:09    5739.5      0.02       0.7       0.0 d/m/t1_reg[13]/D         
+    0:00:09    5739.7      0.02       0.7       0.0 d/m/t2_reg[13]/D         
+    0:00:09    5735.5      0.02       0.6       0.0 d/m/t3_reg[10]/D         
+    0:00:09    5736.8      0.02       0.6       0.0 d/m/t3_reg[10]/D         
+    0:00:09    5737.6      0.02       0.6       0.0 d/m/t1_reg[12]/D         
+    0:00:09    5737.4      0.01       0.4       0.0 d/m/t3_reg[14]/D         
+    0:00:10    5737.4      0.01       0.4       0.0 d/m/t3_reg[13]/D         
+    0:00:10    5737.4      0.01       0.4       0.0 d/m/t1_reg[12]/D         
+    0:00:10    5737.1      0.01       0.4       0.0 d/m/t3_reg[13]/D         
+    0:00:10    5735.8      0.01       0.3       0.0 d/m/t2_reg[13]/D         
+    0:00:10    5737.6      0.01       0.3       0.0 d/y/mem_reg[0][14]/D     
+    0:00:10    5741.9      0.01       0.3       0.0 d/m/t4_reg[13]/D         
+    0:00:10    5745.6      0.01       0.2       0.0 d/m/t3_reg[10]/D         
+    0:00:10    5746.7      0.01       0.2       0.0 d/m/t1_reg[15]/D         
+    0:00:10    5745.1      0.01       0.2       0.0 d/m/t3_reg[13]/D         
+    0:00:10    5745.9      0.01       0.2       0.0 d/m/t3_reg[10]/D         
+    0:00:10    5745.3      0.01       0.2       0.0 d/m/t3_reg[13]/D         
+    0:00:10    5746.7      0.01       0.2       0.0 d/m/t4_reg[11]/D         
+    0:00:10    5750.9      0.01       0.1       0.0 d/m/t4_reg[14]/D         
+    0:00:10    5752.2      0.01       0.1       0.0 d/m/t3_reg[11]/D         
+    0:00:10    5753.3      0.01       0.1       0.0 d/m/t2_reg[13]/D         
+    0:00:11    5754.1      0.01       0.1       0.0 d/m/t3_reg[13]/D         
+    0:00:11    5760.8      0.00       0.1       0.0 d/y/mem_reg[0][14]/D     
+    0:00:11    5763.2      0.00       0.1       0.0 d/m/t1_reg[12]/D         
+    0:00:11    5763.4      0.00       0.1       0.0 d/m/t4_reg[11]/D         
+    0:00:11    5766.1      0.00       0.1       0.0 d/y/mem_reg[0][14]/D     
+    0:00:11    5765.0      0.00       0.1       0.0 d/m/t3_reg[10]/D         
+    0:00:11    5765.0      0.00       0.1       0.0                          
+    0:00:11    5758.9      0.00       0.1       0.0                          
+    0:00:12    5758.9      0.00       0.1       0.0                          
+    0:00:12    5761.6      0.00       0.0       0.0                          
+    0:00:12    5762.6      0.00       0.0       0.0                          
+    0:00:12    5764.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12    5764.0      0.00       0.0       0.0                          
+    0:00:12    5764.0      0.00       0.0       0.0                          
+    0:00:12    5742.9      0.00       0.0       0.0                          
+    0:00:12    5741.1      0.00       0.0       0.0                          
+    0:00:12    5741.1      0.00       0.0       0.0                          
+    0:00:12    5741.1      0.00       0.0       0.0                          
+    0:00:12    5741.1      0.00       0.0       0.0                          
+    0:00:12    5741.1      0.00       0.0       0.0                          
+    0:00:12    5729.9      0.00       0.1       0.0                          
+    0:00:12    5729.9      0.00       0.1       0.0                          
+    0:00:12    5729.9      0.00       0.1       0.0                          
+    0:00:12    5729.9      0.00       0.1       0.0                          
+    0:00:12    5729.9      0.00       0.1       0.0                          
+    0:00:12    5729.9      0.00       0.1       0.0                          
+    0:00:12    5731.8      0.00       0.0       0.0 d/m/t3_reg[12]/D         
+    0:00:12    5734.7      0.00       0.0       0.0 d/m/t1_reg[13]/D         
+    0:00:12    5735.5      0.00       0.0       0.0 d/m/t4_reg[12]/D         
+    0:00:12    5736.8      0.00       0.0       0.0 d/m/t1_reg[12]/D         
+    0:00:12    5737.6      0.00       0.0       0.0 d/m/t4_reg[14]/D         
+    0:00:12    5741.1      0.00       0.0       0.0 d/m/t3_reg[10]/D         
+    0:00:12    5742.1      0.00       0.0       0.0 d/m/t3_reg[10]/D         
+    0:00:12    5741.6      0.00       0.0       0.0 d/m/t3_reg[12]/D         
+    0:00:12    5745.1      0.00       0.0       0.0 d/m/t4_reg[14]/D         
+    0:00:12    5746.4      0.00       0.0       0.0 d/y/mem_reg[0][14]/D     
+    0:00:13    5745.6      0.00       0.0       0.0                          
+    0:00:13    5738.7      0.00       0.0       0.0                          
+    0:00:13    5709.4      0.00       0.0       0.0                          
+    0:00:13    5706.5      0.00       0.0       0.0                          
+    0:00:13    5703.8      0.00       0.0       0.0                          
+    0:00:13    5703.8      0.00       0.0       0.0                          
+    0:00:13    5703.8      0.00       0.0       0.0                          
+    0:00:13    5703.8      0.00       0.0       0.0                          
+    0:00:13    5703.8      0.00       0.0       0.0                          
+    0:00:13    5703.8      0.00       0.0       0.0                          
+    0:00:13    5706.5      0.00       0.0       0.0 d/y/mem_reg[0][14]/D     
+    0:00:13    5707.8      0.00       0.0       0.0                          
+    0:00:13    5709.4      0.00       0.0       0.0                          
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+report_area
+ 
+****************************************
+Report : area
+Design : mvm3_part3
+Version: J-2014.09-SP5-2
+Date   : Mon Oct 26 15:43:00 2015
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           28
+Number of nets:                            86
+Number of cells:                            2
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       2
+
+Combinational area:               3687.557984
+Buf/Inv area:                      291.270000
+Noncombinational area:            2021.865931
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  5709.423915
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : mvm3_part3
+Version: J-2014.09-SP5-2
+Date   : Mon Oct 26 15:43:00 2015
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mvm3_part3             5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   2.5188 mW   (88%)
+  Net Switching Power  = 349.5309 uW   (12%)
+                         ---------
+Total Dynamic Power    =   2.8684 mW  (100%)
+
+Cell Leakage Power     = 119.0969 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       2.2720e+03           62.6052        3.5248e+04        2.3698e+03  (  79.33%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    246.8774          286.9260        8.3849e+04          617.6533  (  20.67%)
+--------------------------------------------------------------------------------------------------
+Total          2.5189e+03 uW       349.5311 uW     1.1910e+05 nW     2.9875e+03 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mvm3_part3
+Version: J-2014.09-SP5-2
+Date   : Mon Oct 26 15:43:00 2015
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: d/a/data_out0_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: d/m/t1_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mvm3_part3         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  d/a/data_out0_reg[4]/CK (DFF_X1)                        0.00       0.00 r
+  d/a/data_out0_reg[4]/Q (DFF_X1)                         0.12       0.12 r
+  d/a/data_out0[4] (memory4_out_WIDTH8_SIZE16_LOGSIZE6)
+                                                          0.00       0.12 r
+  d/m/a[4] (matrix)                                       0.00       0.12 r
+  d/m/mult_195/a[4] (matrix_DW_mult_tc_7)                 0.00       0.12 r
+  d/m/mult_195/U497/Z (XOR2_X1)                           0.09       0.21 r
+  d/m/mult_195/U452/ZN (NAND2_X1)                         0.04       0.24 f
+  d/m/mult_195/U509/ZN (OAI22_X1)                         0.05       0.30 r
+  d/m/mult_195/U146/S (HA_X1)                             0.08       0.38 r
+  d/m/mult_195/U145/S (FA_X1)                             0.12       0.50 f
+  d/m/mult_195/U328/ZN (AND2_X1)                          0.05       0.55 f
+  d/m/mult_195/U319/ZN (AOI21_X1)                         0.07       0.62 r
+  d/m/mult_195/U279/ZN (OAI21_X1)                         0.04       0.65 f
+  d/m/mult_195/U432/ZN (AOI21_X1)                         0.05       0.70 r
+  d/m/mult_195/U525/ZN (OAI21_X1)                         0.04       0.74 f
+  d/m/mult_195/U422/ZN (XNOR2_X1)                         0.05       0.79 f
+  d/m/mult_195/product[13] (matrix_DW_mult_tc_7)          0.00       0.79 f
+  d/m/t1_reg[13]/D (DFF_X1)                               0.01       0.80 f
+  data arrival time                                                  0.80
+
+  clock clk (rise edge)                                   0.84       0.84
+  clock network delay (ideal)                             0.00       0.84
+  d/m/t1_reg[13]/CK (DFF_X1)                              0.00       0.84 r
+  library setup time                                     -0.04       0.80
+  data required time                                                 0.80
+  --------------------------------------------------------------------------
+  data required time                                                 0.80
+  data arrival time                                                 -0.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/rishchan/ese507work/project2/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...

@@ -1,0 +1,818 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.31;
+1.31
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "mvm_8_8_8_1";
+mvm_8_8_8_1
+set SRC_FILE "r_chandrasekaran_mvm_8_8_8_1.sv";
+r_chandrasekaran_mvm_8_8_8_1.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./r_chandrasekaran_mvm_8_8_8_1.sv
+Compiling source file ./r_chandrasekaran_mvm_8_8_8_1.sv
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:1: Parameter keyword used in local parameter declaration. (VER-329)
+Information:  ./r_chandrasekaran_mvm_8_8_8_1.sv:389: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:397: the undeclared symbol 'done' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:403: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:404: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:407: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:410: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:410: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:471: The statements in initial blocks are ignored. (VER-281)
+Information:  ./r_chandrasekaran_mvm_8_8_8_1.sv:473: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:481: the undeclared symbol 'done' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:487: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:488: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:491: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:494: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:494: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:553: The statements in initial blocks are ignored. (VER-281)
+Information:  ./r_chandrasekaran_mvm_8_8_8_1.sv:555: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:563: the undeclared symbol 'done' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:569: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:570: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:573: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:576: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:576: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:652: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mvm_8_8_8_1'.
+Information: Building the design 'controlpath'. (HDL-193)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:78: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:264: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 35 in file
+	'./r_chandrasekaran_mvm_8_8_8_1.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            36            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 93 in file
+	'./r_chandrasekaran_mvm_8_8_8_1.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            94            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine controlpath line 46 in file
+		'./r_chandrasekaran_mvm_8_8_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    counter2_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath'. (HDL-193)
+Warning:  ./r_chandrasekaran_mvm_8_8_8_1.sv:343: unsigned to signed assignment occurs. (VER-318)
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|   datapath/343   |   8    |   16    |      3       | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "8,8,4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH8_SIZE8_LOGSIZE4 line 382 in file
+		'./r_chandrasekaran_mvm_8_8_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH8_SIZE8_LOGSIZE4/383 |   8    |    8    |      3       | N  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mac'. (HDL-193)
+
+Inferred memory devices in process
+	in routine mac line 359 in file
+		'./r_chandrasekaran_mvm_8_8_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pipeline_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine mac line 363 in file
+		'./r_chandrasekaran_mvm_8_8_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     mac_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "16,1,4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE1_LOGSIZE4 line 382 in file
+		'./r_chandrasekaran_mvm_8_8_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset loadMatrix loadVector start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{loadMatrix loadVector start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+#set_input_delay 1 -max -clock clk $INPUTS
+#set_output_delay 1 -max -clock clk [all_outputs]
+# rule of thumb: 20% of clock period
+###### OPTIMIZATION #######
+set_max_area 0
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     J-2014.09-SP5-2
+Date:        Sat Dec  5 02:38:35 2015
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Unconnected ports (LINT-28)                                     1
+
+Cells                                                              44
+    Cells do not drive (LINT-1)                                     4
+    Connected to power or ground (LINT-32)                         32
+    Nets connected to multiple pins on same cell (LINT-33)          8
+--------------------------------------------------------------------------------
+
+Warning: In design 'controlpath', cell 'C766' does not drive any nets. (LINT-1)
+Warning: In design 'controlpath', cell 'C767' does not drive any nets. (LINT-1)
+Warning: In design 'controlpath', cell 'C837' does not drive any nets. (LINT-1)
+Warning: In design 'controlpath', cell 'C871' does not drive any nets. (LINT-1)
+Warning: In design 'datapath', port 'addr_y[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'datapath', a pin on submodule 'y[0]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[0]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[0]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[0]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[1]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[1]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[1]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[1]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[2]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[2]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[2]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[2]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[3]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[3]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[3]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[3]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[4]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[4]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[4]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[4]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[5]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[5]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[5]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[5]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[6]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[6]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[6]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[6]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[7]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[3]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[7]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[2]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[7]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[1]' is connected to logic 0. 
+Warning: In design 'datapath', a pin on submodule 'y[7]' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'addr[0]' is connected to logic 0. 
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[0]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[1]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[2]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[3]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[4]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[5]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[6]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+Warning: In design 'datapath', the same net is connected to more than one pin on submodule 'y[7]'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'addr[3]', 'addr[2]'', 'addr[1]', 'addr[0]'.
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2
+                                                               |     *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2
+                                                               |     *     |
+============================================================================
+
+
+Information: There are 45 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'memory_WIDTH16_SIZE1_LOGSIZE4_0'
+  Processing 'mac_0'
+  Processing 'memory_WIDTH8_SIZE8_LOGSIZE4_0'
+  Processing 'datapath'
+  Processing 'controlpath'
+Information: Added key list 'DesignWare' to design 'controlpath'. (DDB-72)
+Information: The register 'counter2_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'mvm_8_8_8_1'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'mac_0_DW01_add_0'
+  Processing 'mac_1_DW01_add_0'
+  Processing 'mac_2_DW01_add_0'
+  Processing 'mac_3_DW01_add_0'
+  Processing 'mac_4_DW01_add_0'
+  Processing 'mac_5_DW01_add_0'
+  Processing 'mac_6_DW01_add_0'
+  Processing 'mac_7_DW01_add_0'
+  Processing 'controlpath_DW01_dec_0'
+  Mapping 'mac_0_DW_mult_tc_0'
+  Mapping 'mac_1_DW_mult_tc_0'
+  Mapping 'mac_2_DW_mult_tc_0'
+  Mapping 'mac_3_DW_mult_tc_0'
+  Mapping 'mac_4_DW_mult_tc_0'
+  Mapping 'mac_5_DW_mult_tc_0'
+  Mapping 'mac_6_DW_mult_tc_0'
+  Mapping 'mac_7_DW_mult_tc_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   12160.7      0.34      14.5     228.4                          
+    0:00:04   12156.5      0.34      14.6     228.4                          
+    0:00:04   12156.5      0.34      14.6     228.4                          
+    0:00:04   12156.5      0.34      14.6     228.4                          
+    0:00:04   12156.5      0.34      14.6     228.4                          
+    0:00:05   10889.0      0.36      13.7       0.0                          
+    0:00:05   10897.2      0.33      12.8       0.0                          
+    0:00:05   10906.3      0.35      12.6       0.0                          
+    0:00:05   10909.5      0.32      12.2       0.0                          
+    0:00:05   10912.9      0.30      12.1       0.0                          
+    0:00:06   10924.4      0.30      11.7       0.0                          
+    0:00:06   10951.5      0.29      11.2       0.0                          
+    0:00:06   10977.6      0.29      10.8       0.0                          
+    0:00:06   10979.4      0.28      10.6       0.0                          
+    0:00:06   10997.5      0.28      10.3       0.0                          
+    0:00:06   11001.0      0.28      10.1       0.0                          
+    0:00:06   11008.1      0.27      10.0       0.0                          
+    0:00:06   11025.4      0.27       9.7       0.0                          
+    0:00:06   11042.7      0.26       9.5       0.0                          
+    0:00:06   11073.6      0.26       9.0       0.0                          
+    0:00:06   11083.4      0.26       8.9       0.0                          
+    0:00:07   11109.0      0.25       8.5       0.0                          
+    0:00:07   11123.9      0.25       8.3       0.0                          
+    0:00:07   11143.5      0.25       8.2       0.0                          
+    0:00:07   11143.5      0.25       8.2       0.0                          
+    0:00:07   11143.5      0.25       8.2       0.0                          
+    0:00:07   11143.5      0.25       8.2       0.0                          
+    0:00:07   11143.5      0.25       8.2       0.0                          
+    0:00:07   11143.5      0.25       8.2       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07   11143.5      0.25       8.2       0.0                          
+    0:00:07   11162.7      0.24       7.9       0.0 d/mac_mod[4]/pipeline_reg[14]/D
+    0:00:07   11178.1      0.23       7.8       0.0 d/mac_mod[0]/pipeline_reg[14]/D
+    0:00:07   11198.6      0.23       7.5       0.0 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:07   11215.6      0.23       7.4       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:07   11233.4      0.22       7.2       0.0 d/mac_mod[5]/pipeline_reg[14]/D
+    0:00:07   11245.1      0.22       7.1       0.0 d/mac_mod[1]/pipeline_reg[14]/D
+    0:00:07   11261.9      0.22       6.9       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:07   11277.9      0.22       6.7       0.0 d/mac_mod[4]/pipeline_reg[14]/D
+    0:00:07   11290.6      0.21       6.6       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:07   11305.0      0.21       6.5       0.0 d/mac_mod[0]/pipeline_reg[14]/D
+    0:00:07   11316.4      0.21       6.4       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:07   11327.3      0.20       6.3       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:07   11336.1      0.20       6.1       0.0 d/mac_mod[3]/pipeline_reg[14]/D
+    0:00:07   11348.4      0.20       6.0       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:08   11361.7      0.20       5.8       0.0 d/mac_mod[7]/pipeline_reg[14]/D
+    0:00:08   11381.3      0.19       5.7       0.0 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:08   11395.2      0.19       5.7       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:08   11410.9      0.19       5.4       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:08   11430.0      0.19       5.2       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:08   11437.7      0.18       5.2       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:08   11446.5      0.18       5.1       0.0 d/mac_mod[5]/pipeline_reg[14]/D
+    0:00:08   11452.4      0.18       5.1       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:08   11461.7      0.17       4.9       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:08   11475.0      0.17       4.9       0.0 d/mac_mod[7]/mac_out_reg[15]/D
+    0:00:08   11482.7      0.17       4.8       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:08   11491.5      0.17       4.7       0.0 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:08   11502.6      0.17       4.5       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:08   11509.8      0.17       4.4       0.0 d/mac_mod[3]/pipeline_reg[14]/D
+    0:00:08   11522.1      0.16       4.3       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:08   11525.0      0.16       4.3       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:08   11531.4      0.16       4.2       0.0 d/mac_mod[7]/mac_out_reg[15]/D
+    0:00:08   11534.8      0.15       4.2       0.0 d/mac_mod[5]/mac_out_reg[15]/D
+    0:00:08   11542.8      0.15       4.1       0.0 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:09   11556.1      0.15       4.0       0.0 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:09   11565.4      0.15       3.9       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:09   11573.7      0.14       3.9       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:09   11581.1      0.14       3.9       0.0 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:09   11580.0      0.14       3.8       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:09   11596.3      0.14       3.7       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:09   11607.4      0.14       3.6       0.0 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:09   11616.0      0.14       3.5       0.0 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:09   11626.9      0.14       3.4       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:09   11633.0      0.13       3.4       0.0 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:09   11637.2      0.13       3.4       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:09   11641.5      0.13       3.4       0.0 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:09   11643.9      0.13       3.3       0.0 d/mac_mod[0]/mac_out_reg[15]/D
+    0:00:09   11647.6      0.13       3.2       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:09   11656.4      0.12       3.2       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:09   11655.1      0.12       3.1       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:09   11664.9      0.12       3.0       0.0 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:09   11673.7      0.12       2.9       0.0 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:09   11678.5      0.12       2.8       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:09   11684.6      0.12       2.8       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:10   11688.0      0.11       2.7       0.0 d/mac_mod[3]/pipeline_reg[14]/D
+    0:00:10   11693.4      0.11       2.6       0.0 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:10   11693.6      0.11       2.6       0.0 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:10   11697.6      0.11       2.6       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:10   11706.4      0.10       2.5       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:10   11711.4      0.10       2.4       0.0 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:10   11714.9      0.10       2.3       0.0 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:10   11725.8      0.10       2.3      24.2 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:10   11725.5      0.10       2.2      24.2 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:10   11727.1      0.10       2.2      24.2 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:10   11731.9      0.10       2.2      24.2 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:10   11736.7      0.10       2.2      24.2 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:10   11744.7      0.09       2.2      24.2 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:10   11752.4      0.09       2.1      24.2 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:10   11754.5      0.09       2.1      24.2 d/mac_mod[3]/pipeline_reg[14]/D
+    0:00:10   11760.1      0.09       2.1      24.2 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:10   11766.5      0.09       2.0      24.2 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:10   11768.4      0.09       2.0      24.2 d/mac_mod[3]/pipeline_reg[14]/D
+    0:00:11   11779.8      0.08       2.0      48.4 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:11   11783.3      0.08       2.0      48.4 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:11   11791.0      0.08       1.9      48.4 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:11   11791.8      0.08       1.9      48.4 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:11   11793.1      0.08       1.8      48.4 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:11   11796.0      0.08       1.8      48.4 d/mac_mod[3]/pipeline_reg[14]/D
+    0:00:11   11802.4      0.07       1.8      48.4 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:11   11804.3      0.07       1.7      48.4 d/mac_mod[2]/pipeline_reg[15]/D
+    0:00:11   11809.6      0.07       1.7      48.4 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:11   11831.9      0.07       1.6      72.7 d/mac_mod[0]/mac_out_reg[15]/D
+    0:00:11   11842.1      0.06       1.5      96.9 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:11   11844.4      0.06       1.5      96.9 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:11   11862.5      0.06       1.5     145.3 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:11   11868.1      0.06       1.4     145.3 d/mac_mod[4]/pipeline_reg[14]/D
+    0:00:11   11878.0      0.06       1.4     145.3 d/mac_mod[5]/mac_out_reg[15]/D
+    0:00:11   11887.5      0.06       1.3     145.3 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:12   11890.7      0.05       1.3     145.3 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:12   11893.7      0.05       1.2     145.3 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:12   11896.3      0.05       1.2     145.3 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:12   11899.2      0.05       1.2     145.3 d/mac_mod[3]/pipeline_reg[15]/D
+    0:00:12   11908.8      0.05       1.2     169.5 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:12   11911.5      0.05       1.1     169.5 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:12   11917.9      0.05       1.1     169.5 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:12   11920.5      0.05       1.1     169.5 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:12   11922.7      0.05       1.1     169.5 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:12   11925.8      0.04       1.0     169.5 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:12   11926.9      0.04       1.0     169.5 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:12   11927.2      0.04       1.0     169.5 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:12   11929.0      0.04       1.0     169.5 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:12   11934.4      0.04       0.9     169.5 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:12   11942.1      0.04       0.9     169.5 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:12   11961.2      0.04       0.8     218.0 d/mac_mod[7]/mac_out_reg[15]/D
+    0:00:12   11967.6      0.04       0.8     218.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:13   11980.9      0.04       0.8     242.2 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:13   11980.9      0.04       0.8     242.2 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:13   11987.8      0.04       0.7     242.2 d/mac_mod[3]/pipeline_reg[15]/D
+    0:00:13   11992.3      0.03       0.7     242.2 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:13   11994.5      0.03       0.7     242.2 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:13   11995.0      0.03       0.7     242.2 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:13   11998.5      0.03       0.7     242.2 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:13   11999.0      0.03       0.7     242.2 d/mac_mod[2]/pipeline_reg[14]/D
+    0:00:13   11999.8      0.03       0.7     242.2 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:13   12000.6      0.03       0.6     242.2 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:13   12000.6      0.03       0.6     242.2 d/mac_mod[3]/pipeline_reg[15]/D
+    0:00:13   12002.7      0.03       0.6     242.2 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:13   12005.4      0.03       0.6     242.2 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:13   12008.6      0.03       0.6     242.2 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:13   12010.2      0.03       0.6     242.2 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:13   12013.4      0.03       0.6     242.2 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:14   12017.6      0.03       0.5     242.2 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:14   12023.5      0.03       0.5     242.2 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:14   12031.2      0.02       0.5     242.2 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:14   12036.5      0.02       0.4     242.2 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:14   12041.3      0.02       0.4     242.2 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:14   12052.7      0.02       0.4     242.2 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:14   12058.3      0.02       0.3     242.2 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:14   12070.0      0.02       0.3     266.4 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:14   12073.5      0.02       0.3     266.4 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:14   12080.9      0.01       0.2     266.4 d/mac_mod[6]/pipeline_reg[15]/D
+    0:00:14   12086.5      0.01       0.2     266.4 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:14   12091.3      0.01       0.2     266.4 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:14   12098.7      0.01       0.2     266.4 d/mac_mod[5]/pipeline_reg[15]/D
+    0:00:14   12104.9      0.01       0.1     266.4 d/mac_mod[2]/pipeline_reg[15]/D
+    0:00:14   12109.9      0.01       0.1     266.4 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:14   12113.4      0.01       0.1     266.4 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:14   12117.4      0.01       0.1     266.4 d/mac_mod[2]/pipeline_reg[15]/D
+    0:00:14   12119.2      0.01       0.1     266.4 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:14   12122.4      0.01       0.1     266.4 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:14   12130.1      0.01       0.1     266.4 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:15   12132.8      0.01       0.0     266.4 d/mac_mod[7]/pipeline_reg[15]/D
+    0:00:15   12131.5      0.00       0.0     266.4 d/mac_mod[7]/mac_out_reg[15]/D
+    0:00:15   12133.1      0.00       0.0     266.4 d/mac_mod[2]/pipeline_reg[15]/D
+    0:00:15   12134.9      0.00       0.0     266.4 d/mac_mod[4]/mac_out_reg[15]/D
+    0:00:15   12137.3      0.00       0.0     266.4 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:15   12141.0      0.00       0.0     266.4 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:15   12146.1      0.00       0.0     266.4 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:15   12147.2      0.00       0.0     266.4 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:15   12152.7      0.00       0.0     266.4 d/mac_mod[0]/pipeline_reg[15]/D
+    0:00:15   12156.5      0.00       0.0     266.4 d/mac_mod[7]/mac_out_reg[15]/D
+    0:00:15   12158.6      0.00       0.0     266.4 d/mac_mod[3]/mac_out_reg[15]/D
+    0:00:15   12159.4      0.00       0.0     266.4 d/mac_mod[4]/pipeline_reg[15]/D
+    0:00:15   12161.5      0.00       0.0     266.4 d/mac_mod[5]/mac_out_reg[15]/D
+    0:00:15   12163.1      0.00       0.0     266.4 d/mac_mod[5]/mac_out_reg[15]/D
+    0:00:16   12162.8      0.00       0.0     266.4 d/mac_mod[1]/pipeline_reg[15]/D
+    0:00:16   12168.2      0.00       0.0     266.4 d/mac_mod[3]/pipeline_reg[15]/D
+    0:00:16   12168.2      0.00       0.0     266.4                          
+    0:00:16   12162.6      0.00       0.0     266.4                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:16   12162.6      0.00       0.0     266.4                          
+    0:00:16   12071.9      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:16   12071.9      0.00       0.0       0.0                          
+    0:00:16   12071.9      0.00       0.0       0.0                          
+    0:00:16   12000.1      0.04       0.1       0.0                          
+    0:00:16   11992.6      0.04       0.1       0.0                          
+    0:00:16   11989.4      0.04       0.1       0.0                          
+    0:00:16   11989.4      0.04       0.1       0.0                          
+    0:00:16   11989.4      0.04       0.1       0.0                          
+    0:00:16   11989.4      0.04       0.1       0.0                          
+    0:00:16   11996.6      0.04       0.1       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:16   12001.7      0.03       0.1       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:16   12003.2      0.03       0.1       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:17   12006.4      0.02       0.1       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:17   12009.1      0.02       0.1       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:17   12011.2      0.02       0.1       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:17   12014.7      0.02       0.1       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:17   12014.7      0.02       0.1       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:17   12016.5      0.01       0.1       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:17   12018.4      0.01       0.0       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:17   12021.6      0.01       0.0       0.0 d/mac_mod[2]/mac_out_reg[15]/D
+    0:00:17   12024.3      0.01       0.0       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:17   12029.1      0.01       0.0       0.0 d/mac_mod[6]/mac_out_reg[15]/D
+    0:00:17   12031.2      0.01       0.0       0.0 d/mac_mod[1]/mac_out_reg[15]/D
+    0:00:17   12037.8      0.00       0.0       0.0                          
+    0:00:17   12042.4      0.00       0.0       0.0                          
+    0:00:17   12024.3      0.00       0.0       0.0                          
+    0:00:17   12022.4      0.00       0.0       0.0                          
+    0:00:17   12022.4      0.00       0.0       0.0                          
+    0:00:17   12022.4      0.00       0.0       0.0                          
+    0:00:17   12022.4      0.00       0.0       0.0                          
+    0:00:17   12022.4      0.00       0.0       0.0                          
+    0:00:17   12022.4      0.00       0.0       0.0                          
+    0:00:17   12023.2      0.00       0.0       0.0                          
+    0:00:17   12007.5      0.00       0.0       0.0                          
+    0:00:18   11991.3      0.00       0.0       0.0                          
+    0:00:18   11988.9      0.00       0.0       0.0                          
+    0:00:18   11988.4      0.00       0.0       0.0                          
+    0:00:18   11988.4      0.00       0.0       0.0                          
+    0:00:18   11988.4      0.00       0.0       0.0                          
+    0:00:18   11988.4      0.00       0.0       0.0                          
+    0:00:18   11988.4      0.00       0.0       0.0                          
+    0:00:18   11988.4      0.00       0.0       0.0                          
+    0:00:18   11988.6      0.00       0.0       0.0                          
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'mvm_8_8_8_1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'd/y[1]/clk': 1170 load(s), 1 driver(s)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : mvm_8_8_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 02:38:53 2015
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'mvm_8_8_8_1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           30
+Number of nets:                            81
+Number of cells:                            2
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       2
+
+Combinational area:               6684.579965
+Buf/Inv area:                      474.809997
+Noncombinational area:            5304.039810
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 11988.619775
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : mvm_8_8_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 02:38:54 2015
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mvm_8_8_8_1            5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   5.9507 mW   (96%)
+  Net Switching Power  = 228.3055 uW    (4%)
+                         ---------
+Total Dynamic Power    =   6.1791 mW  (100%)
+
+Cell Leakage Power     = 249.4304 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       5.8112e+03           23.8816        9.0042e+04        5.9252e+03  (  92.17%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    139.5298          204.4230        1.5939e+05          503.3423  (   7.83%)
+--------------------------------------------------------------------------------------------------
+Total          5.9508e+03 uW       228.3046 uW     2.4943e+05 nW     6.4285e+03 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mvm_8_8_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 02:38:54 2015
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: d/matrix[1]/data_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: d/mac_mod[1]/pipeline_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mvm_8_8_8_1        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  d/matrix[1]/data_out_reg[1]/CK (DFF_X1)                 0.00 #     0.00 r
+  d/matrix[1]/data_out_reg[1]/QN (DFF_X1)                 0.07       0.07 f
+  d/matrix[1]/U3/ZN (INV_X2)                              0.07       0.14 r
+  d/matrix[1]/data_out[1] (memory_WIDTH8_SIZE8_LOGSIZE4_7)
+                                                          0.00       0.14 r
+  d/mac_mod[1]/a[1] (mac_6)                               0.00       0.14 r
+  d/mac_mod[1]/mult_355/a[1] (mac_6_DW_mult_tc_0)         0.00       0.14 r
+  d/mac_mod[1]/mult_355/U295/ZN (XNOR2_X2)                0.11       0.26 r
+  d/mac_mod[1]/mult_355/U283/ZN (OAI22_X1)                0.05       0.30 f
+  d/mac_mod[1]/mult_355/U282/Z (XOR2_X1)                  0.07       0.38 f
+  d/mac_mod[1]/mult_355/U215/ZN (NAND2_X1)                0.04       0.42 r
+  d/mac_mod[1]/mult_355/U216/ZN (NAND3_X1)                0.04       0.46 f
+  d/mac_mod[1]/mult_355/U190/ZN (NAND2_X1)                0.03       0.49 r
+  d/mac_mod[1]/mult_355/U192/ZN (NAND3_X1)                0.04       0.53 f
+  d/mac_mod[1]/mult_355/U207/ZN (NAND2_X1)                0.04       0.57 r
+  d/mac_mod[1]/mult_355/U204/ZN (NAND3_X1)                0.04       0.61 f
+  d/mac_mod[1]/mult_355/U246/ZN (NAND2_X1)                0.04       0.64 r
+  d/mac_mod[1]/mult_355/U219/ZN (NAND3_X1)                0.04       0.68 f
+  d/mac_mod[1]/mult_355/U252/ZN (NAND2_X1)                0.04       0.71 r
+  d/mac_mod[1]/mult_355/U185/ZN (NAND3_X1)                0.04       0.75 f
+  d/mac_mod[1]/mult_355/U258/ZN (NAND2_X1)                0.04       0.79 r
+  d/mac_mod[1]/mult_355/U240/ZN (NAND3_X1)                0.04       0.83 f
+  d/mac_mod[1]/mult_355/U264/ZN (NAND2_X1)                0.04       0.86 r
+  d/mac_mod[1]/mult_355/U227/ZN (NAND3_X1)                0.04       0.90 f
+  d/mac_mod[1]/mult_355/U272/ZN (NAND2_X1)                0.03       0.93 r
+  d/mac_mod[1]/mult_355/U275/ZN (NAND3_X1)                0.04       0.97 f
+  d/mac_mod[1]/mult_355/U291/ZN (NAND2_X1)                0.04       1.00 r
+  d/mac_mod[1]/mult_355/U261/ZN (NAND3_X1)                0.04       1.04 f
+  d/mac_mod[1]/mult_355/U299/ZN (NAND2_X1)                0.04       1.08 r
+  d/mac_mod[1]/mult_355/U196/ZN (NAND3_X1)                0.04       1.12 f
+  d/mac_mod[1]/mult_355/U234/ZN (NAND2_X1)                0.04       1.16 r
+  d/mac_mod[1]/mult_355/U229/ZN (NAND3_X1)                0.04       1.19 f
+  d/mac_mod[1]/mult_355/U239/ZN (NAND2_X1)                0.03       1.22 r
+  d/mac_mod[1]/mult_355/U183/ZN (AND3_X1)                 0.05       1.27 r
+  d/mac_mod[1]/mult_355/product[15] (mac_6_DW_mult_tc_0)
+                                                          0.00       1.27 r
+  d/mac_mod[1]/pipeline_reg[15]/D (DFF_X1)                0.01       1.28 r
+  data arrival time                                                  1.28
+
+  clock clk (rise edge)                                   1.31       1.31
+  clock network delay (ideal)                             0.00       1.31
+  d/mac_mod[1]/pipeline_reg[15]/CK (DFF_X1)               0.00       1.31 r
+  library setup time                                     -0.03       1.28
+  data required time                                                 1.28
+  --------------------------------------------------------------------------
+  data required time                                                 1.28
+  data arrival time                                                 -1.28
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/rishchan/ese507work/project3/Milestone/submission/report/q9/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 10 nets to module mvm_8_8_8_1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+quit
+
+Thank you...

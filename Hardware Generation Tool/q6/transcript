@@ -1,0 +1,68 @@
+# vsim tbench1 -c -do "run -all" 
+# Start time: 01:47:17 on Dec 05,2015
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "controlpath(fast)".
+# //  ModelSim SE 10.4c Jul 19 2015 Linux 3.10.0-229.20.1.el7.x86_64
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading sv_std.std
+# Loading work.r_chandrasekaran_mvm_8_8_16_1_sv_unit(fast)
+# Loading work.tbench1(fast)
+# Loading work.mvm_8_8_16_1(fast)
+# Loading work.controlpath(fast)
+# Loading work.datapath(fast)
+# Loading work.memory(fast)
+# Loading work.mac(fast)
+# Loading work.memory(fast__1)
+# run -all
+# for random set:          1
+# y[          0] =   289322952. Expected value is   289322952
+# y[          1] = -1030903423. Expected value is -1030903423
+# y[          2] = -1843862848. Expected value is -1843862848
+# y[          3] = -1254866816. Expected value is -1254866816
+# y[          4] =  1609875591. Expected value is  1609875591
+# y[          5] =   447297125. Expected value is   447297125
+# y[          6] =   808853333. Expected value is   808853333
+# y[          7] = -1277101789. Expected value is -1277101789
+# for random set:          2
+# y[          0] =   736733751. Expected value is   736733751
+# y[          1] =  -838956395. Expected value is  -838956395
+# y[          2] =   938619561. Expected value is   938619561
+# y[          3] =  -830382625. Expected value is  -830382625
+# y[          4] =  -115728748. Expected value is  -115728748
+# y[          5] =   944193195. Expected value is   944193195
+# y[          6] = -1002574644. Expected value is -1002574644
+# y[          7] = -1449991039. Expected value is -1449991039
+# for random set:          3
+# y[          0] = -1602189506. Expected value is -1602189506
+# y[          1] =  1267015377. Expected value is  1267015377
+# y[          2] =  2024104457. Expected value is  2024104457
+# y[          3] = -1662462229. Expected value is -1662462229
+# y[          4] = -1388888252. Expected value is -1388888252
+# y[          5] = -1508618014. Expected value is -1508618014
+# y[          6] = -1238362313. Expected value is -1238362313
+# y[          7] =   268754281. Expected value is   268754281
+# for random set:          4
+# y[          0] =  -317459286. Expected value is  -317459286
+# y[          1] =  -889629613. Expected value is  -889629613
+# y[          2] = -1555567594. Expected value is -1555567594
+# y[          3] =  -725832132. Expected value is  -725832132
+# y[          4] = -1049106221. Expected value is -1049106221
+# y[          5] = -1340188606. Expected value is -1340188606
+# y[          6] =  -436058173. Expected value is  -436058173
+# y[          7] =   128347603. Expected value is   128347603
+# ** Note: $finish    : r_chandrasekaran_mvm_8_8_16_1.sv(467)
+#    Time: 4156 ns  Iteration: 0  Instance: /tbench1
+# End time: 01:47:22 on Dec 05,2015, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
